@@ -6,6 +6,7 @@ import store from './store'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getMessaging } from "firebase/messaging";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,7 +29,7 @@ const analytics = getAnalytics(app);
 
 createApp(App).use(store).use(router).mount('#app')
 
-const messaging = firebase.messaging();
+const messaging = getMessaging(app);
 messaging.usePublicVapidKey("BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY"); // 1. Generate a new key pair
 
 // Request Permission of Notifications
