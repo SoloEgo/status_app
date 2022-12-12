@@ -30,10 +30,9 @@ const analytics = getAnalytics(app);
 createApp(App).use(store).use(router).mount('#app')
 
 const messaging = getMessaging(app);
-getToken(messaging, { vapidKey: "BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY" });
 
 // Request Permission of Notifications
-getToken(messaging, { vapidKey: '<YOUR_PUBLIC_VAPID_KEY_HERE>' }).then((currentToken) => {
+getToken(messaging, { vapidKey: 'BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY' }).then((currentToken) => {
     if (currentToken) {
         console.log(currentToken)
         // Send the token to your server and update the UI if necessary
