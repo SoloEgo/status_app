@@ -30,7 +30,7 @@ const analytics = getAnalytics(app);
 createApp(App).use(store).use(router).mount('#app')
 
 const messaging = getMessaging(app);
-messaging.usePublicVapidKey("BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY"); // 1. Generate a new key pair
+getToken(messaging, {vapidKey: "BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY"});
 
 // Request Permission of Notifications
 messaging.requestPermission().then(() => {
