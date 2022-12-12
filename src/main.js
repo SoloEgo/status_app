@@ -27,3 +27,18 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 createApp(App).use(store).use(router).mount('#app')
+
+const messaging = firebase.messaging();
+messaging.usePublicVapidKey("BIbMQKF9D97qH5z5pS0WupSADTFBzy3Pu-Kw1XQ-X9kg17u9shRAHo-S8r6uPWNuxfYT-fRxa21kp5kKEF63owY"); // 1. Generate a new key pair
+
+// Request Permission of Notifications
+messaging.requestPermission().then(() => {
+    console.log('Notification permission granted.');
+    
+    // Get Token
+    messaging.getToken().then((token) => {
+        console.log(token)
+    })
+}).catch((err) => {
+    console.log('Unable to get permission to notify.', err);
+});
